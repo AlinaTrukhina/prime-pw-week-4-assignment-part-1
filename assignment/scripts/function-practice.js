@@ -15,31 +15,40 @@ console.log('Test - should say "Hello World!"', hello());
 // 2. Function to return an personalized hello, using the `name` argument.
 //    for example 'Hello, Jo!', or 'Hello, Stacy!'
 function helloName( name ) {
-  return;
+  return 'Hello, ' + name + '!';
 }
 // Remember to call the function to test
+console.log('helloName:', helloName('Alina'));
 
 
 // 3. Function to add two numbers together & return the result
-function addNumbers( firstNumber ) {
+function addNumbers( firstNumber, secondNumber ) {
   // return firstNumber + secondNumber;
+  return firstNumber + secondNumber;
 }
 
+console.log('addNumbers:', addNumbers(3,6));
 
 // 4. Function to multiply three numbers & return the result
-function multiplyThree( ){
-
+function multiplyThree( numberOne, numberTwo, numberThree){
+  return numberOne * numberTwo * numberThree;
 }
+
+console.log('multiplyThree', multiplyThree(5, 1, 0));
 
 
 // 5. Function that will return true if a number is positive, 
 //    or greater than zero, and false otherwise
 function isPositive( number ) {
   if ( number > 0 ){
-    return;
+    return true;
+  } else {
+    return false;
   }
-    return;
 }
+
+console.log('isPositive', isPositive(77));
+
 // Call the function to test each outcome (true & false) 
 // Write a separate console.log statement for each outcome
 console.log( 'isPositive - should say true', isPositive(3) );
@@ -49,16 +58,32 @@ console.log( 'isPositive - should say false', isPositive(-3) );
 
 // 6. Function to return the _last_ item in an array. If the 
 //    array is empty, return `undefined`.
-function getLast( array ) {
 
+function getLast( array ) {
+  if (array.length >= 0) {
+//    lastItem = array[3];
+    return array[array.length - 1];
+  } else {
+    return 'undefined';
+  }
 }
+// console.log(lastItem);
+console.log( 'getLast - should say 3', getLast([0, 1, 2, 3]));
+console.log( 'getLast - should say undefined', getLast([]));
 
 // 7. Function to find a value in an array. Return true if the 
 //    value is found and false otherwise. Use a loop;
 //    DO NOT use Array.includes, Array.indexOf, or Array.find 
 function find( value, array ){
-  
+  for (let n in array) {
+    if (value === array[n]) {
+      return true;
+    } 
+  } return false;
 }
+
+console.log('find - should say true', find(3, [1,2,3]));
+console.log('find - should say false', find(4, [1,2,3]));
 
 // ----------------------
 // Stretch Goals
