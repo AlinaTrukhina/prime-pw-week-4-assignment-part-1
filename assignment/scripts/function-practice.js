@@ -131,3 +131,18 @@ console.log('posArray - should be empty', posArray([-1,-2,-3,-4]));
 // 11. Pick a problem from Edabit(https://edabit.com/) or 
 //     CodeWars(https://www.codewars.com/). Then describe it 
 //     here in a comment, write the function, and test it!
+
+// Determine if an integer is a square number: given an integer, see if it 
+// is a perfect square of two integers. For example, 36 is a perfect square of 6.
+
+// Solution:
+
+function isSquare(n){
+  const sr = Math.sqrt(n);
+    if (n >= 0 && Number.isInteger(sr)) {
+        return true;
+        }
+  return false; // fix me
+}
+
+console.log('isSquare - should be true', isSquare(9))
